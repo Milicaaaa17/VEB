@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Izmijeni";
+    var f = ViewBag.Centar;
+
+}
+
+<h2>Izmijeni</h2>
+
+<form accept-charset="utf-8" action="~/Vlasnik/IzmijeniCentar" method="post">
+    <input name="naziv" required placeholder="Naziv" class="form-control" value="@f.Naziv" />
+    <br />
+    <input name="ulica" required placeholder="Ulica" class="form-control" value="@f.Adresa.Ulica" />
+    <br />
+    <input name="broj" required placeholder="Broj" class="form-control" value="@f.Adresa.Broj" />
+    <br />
+    <input name="mesto" required placeholder="Mesto" class="form-control" value="@f.Adresa.Mesto" />
+    <br />
+    <input name="postanskiBroj" type="number" min="0" step="1" required placeholder="Postanski broj" class="form-control" value="@f.Adresa.PostanskiBroj" />
+    <br />
+    <input name="GodinaOsnivanja" type="number" min="0" step="1" required placeholder="Godina Osnivanja" class="form-control" value="@f.GodinaOsnivanja" />
+    <br />
+    <input name="MjesecnaClanarina" type="number" min="0" required placeholder="Mjesecna Clanarina" class="form-control" value="@f.MjesecnaClanarina" />
+    <br />
+    <input name="GodisnjaClanarina" type="number" min="0" required placeholder="Godisnja Clanarina" class="form-control" value="@f.GodisnjaClanarina" />
+    <br />
+    <input name="CijenaJednogTreninga" type="number" min="0" required placeholder="Cijena Jednog Treninga" class="form-control" value="@f.CijenaJednogTreninga" />
+    <br />
+    <input name="CijenaGrupnogTreninga" type="number" min="0" required placeholder="Cijena Grupnog Treninga" class="form-control" value="@f.CijenaGrupnogTreninga" />
+    <br />
+    <input name="CijenaTreningaSaPersTrenerom" type="number" min="0" required placeholder="Cijena Treninga Sa Pers Trenerom" class="form-control" value="@f.CijenaTreningaSaPersTrenerom" />
+    <br />
+    <input type="submit" value="Izmijeni centar" class="btn btn-default" />
+</form>

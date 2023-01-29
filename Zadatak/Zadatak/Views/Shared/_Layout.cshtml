@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="~/Home/Index">Pocetna</a></li>
+                    @{
+                        if (Session["user"] == null)
+                        {
+                            <li><a href="~/Home/Registracija">Registracija</a></li>
+                            <li><a href="~/Home/Login">Login</a></li>
+                        }
+                        else
+                        {
+                            var k = (Zadatak.Models.Korisnik)Session["user"];
+                            if (k.Uloga == Zadatak.Models.Uloga.POSJETILAC)
+                            {
+                                <li><a href="~/Posjetilac/IstorijaTreninga">Istorija treninga</a></li>
+                            }
+                            else if (k.Uloga == Zadatak.Models.Uloga.TRENER)
+                            {
+                                <li><a href="~/Trener/IstorijaTreninga">Istorija treninga</a></li>
+                                <li><a href="~/Trener/Treninzi">Treninzi</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="~/Vlasnik/RegistracijaTrenera">Registracija trenera</a></li>
+                                <li><a href="~/Vlasnik/FitnesCentri">Fitnes Centri</a></li>
+                                <li><a href="~/Vlasnik/Komentari">Komentari</a></li>
+                            }
+                            <li><a href="~/Korisnik/PrikaziIzmjene">Profil</a></li>
+                            <li><a href="~/Korisnik/Logout">Logout</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

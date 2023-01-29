@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Registracija";
+}
+
+<h2>Registracija</h2>
+<div>
+    <form accept-charset="utf-8" action="~/Korisnik/Registrovanje" method="post">
+        <input name="ime" class="form-control" required placeholder="Ime" />
+        <br />
+        <input name="prezime" class="form-control" required placeholder="Prezime" />
+        <br />
+        <input type="date" class="form-control" required name="datumRodjenja" pattern="\d{2}-\d{2}-\{4}" />
+        <br />
+        <select name="pol" class="form-control" required>
+            <option value="">Izaberite opciju</option>
+            <option>MUSKI</option>
+            <option>ZENSKI</option>
+        </select>
+        <br />
+        <input name="korisnickoIme" class="form-control" required placeholder="Korisnicko ime" />
+        <br />
+        <input type="password" name="lozinka" class="form-control" required placeholder="Lozinka" />
+        <br />
+        <input name="email" type="email" class="form-control" required placeholder="Email" />
+        <br />
+        <input type="submit" value="Registrujte se" class="btn btn-default" />
+    </form>
+</div>
+

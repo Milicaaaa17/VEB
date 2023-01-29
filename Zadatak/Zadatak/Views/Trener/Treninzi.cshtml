@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Treninzi";
+}
+
+<h2>Treninzi</h2>
+
+<form action="~/Trener/KreirajTrening" method="post">
+    <input name="naziv" placeholder="Naziv" class="form-control" required />
+    <br />
+    <select name="tip" class="form-control" required>
+        <option>JOGA</option>
+        <option>LESSMILLSTONE</option>
+        <option>BODYPUMP</option>
+    </select>
+    <br />
+    <input name="vrijeme" type="number" min="10" max="180" placeholder="Vrijeme" class="form-control" required />
+    <br />
+    <input name="termin" type="datetime-local" class="form-control" required />
+    <br />
+    <input name="maxBrojPosjetilaca" type="number" min="1" max="50" placeholder="Maksimalno posjetilaca" class="form-control" required />
+    <br />
+    <input type="submit" value="Dodaj trening" class="btn btn-default" />
+</form>
+
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Tip</th>
+        <th>Vrijeme</th>
+        <th>Termin</th>
+        <th>Maksimalno posjetilaca</th>
+        <th>Broj prijavljenih</th>
+        <th>Brisanje</th>
+        <th>Izmena</th>
+    </tr>
+
+    @foreach (var t in ViewBag.Treninzi)
+    {
+        <tr>
+            <td>@t.Naziv</td>
+            <td>@t.Tip</td>
+            <td>@t.Vrijeme</td>
+            <td>@t.Termin.ToString("dd/MM/yyyy HH:mm")</td>
+            <td>@t.MaxBrojPosjetilaca</td>
+            <td>@t.SpisakPosjetilacaId.Count</td>
+            <td>
+                <form action="~/Trener/ObrisiTrening" method="post">
+                    <input hidden name="id" value="@t.Id" />
+                    <input type="submit" @(t.SpisakPosjetilacaId.Count > 0 ? "disabled" : "") class="btn btn-default" value="Obrisi" />
+                </form>
+            </td>
+            <td>
+                <form action="~/Trener/Izmijeni" method="get">
+                    <input hidden name="id" value="@t.Id" />
+                    <input type="submit" class="btn btn-default" value="Izmijeni" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>

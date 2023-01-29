@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "IstorijaTreninga";
+
+}
+
+<h2>Istorija Treninga</h2>
+<div style="float: right;">
+    <table style="margin-right:20px;">
+        <tr>
+            <th>Naziv</th>
+            <th>Tip treninga</th>
+            <th>Datum i vreme</th>
+            <th>Trajanje</th>
+            <th>Posjetioci</th>
+        </tr>
+
+        @foreach (var t in ViewBag.Treninzi)
+        {
+            <tr>
+                <td>@t.Naziv</td>
+                <td>@t.Tip</td>
+                <td>@t.Termin.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>@t.Vrijeme</td>
+                <td>
+                    <form action="~/Trener/VidiPosjetioce" method="post">
+                        <input hidden name="id" value="@t.Id" />
+                        <input type="submit" value="Vidi" class="btn btn-default" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    @if (ViewBag.Posjetioci.Count != 0)
+    {
+        <h3>Posjetioci</h3>
+        <table border="1">
+            <tr>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Korisnicko ime</th>
+            </tr>
+            @foreach (var p in ViewBag.Posjetioci)
+            {
+                <tr>
+                    <td>@p.Ime</td>
+                    <td>@p.Prezime</td>
+                    <td>@p.KorisnickoIme</td>
+                </tr>
+            }
+        </table>
+    }
+</div>
+
+<form action="~/Trener/PretraziIstoriju" method="get">
+    <label>Naziv:</label>
+    <input name="naziv" class="form-control" />
+    <label>Tip treninga:</label>
+    <select name="tip" class="form-control">
+        <option></option>
+        <option>JOGA</option>
+        <option>LESMILLSTONE</option>
+        <option>BODYPUMP</option>
+    </select>
+    <label>Minimalni datum i vreme:</label>
+    <input name="minDatum" type="datetime-local" class="form-control" />
+    <br />
+    <label>Maksimalni datum i vreme:</label>
+    <input name="maxDatum" type="datetime-local" class="form-control" />
+    <br />
+    <input type="submit" value="Pretrazi" class="btn btn-default" />
+</form>
+
+<br />
+<form action="~/Trener/SortirajIstoriju" method="get">
+    <label>Sortiraj:</label>
+    <select name="parametar" class="form-control">
+        <option value="NAZIV">Naziv</option>
+        <option value="TIP">Tip treninga</option>
+        <option value="DATUM">Datum i vreme</option>
+    </select>
+    <select name="metod" class="form-control">
+        <option>Rastuce</option>
+        <option>Opadajuce</option>
+    </select>
+    <input type="submit" value="Sortiraj" class="btn btn-default" />
+</form>

@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Izmjena profila";
+    var k = ViewBag.Korisnik;
+}
+
+<h2>Izmjena profila</h2>
+<div style="float:right; color:red;">@(ViewBag.Poruka == null ? "" : ViewBag.Poruka)</div>
+<form accept-charset="utf-8" action="~/Korisnik/IzmijeniProfil" method="post">
+    <div class="form-group">
+        <h3>Vaš profil</h3>
+        <label>Ime:</label>
+        <input name="ime" class="form-control" required value="@k.Ime" />
+        <label>Prezime:</label>
+        <input name="prezime" class="form-control" required value="@k.Prezime" />
+        <label>Korisnicko ime:</label>
+        <input name="korisnickoIme" class="form-control" required value="@k.KorisnickoIme" />
+        <label>Email:</label>
+        <input type="email" name="email" class="form-control" required value="@k.Email" />
+        <label>Password:</label>
+        <input type="password" name="lozinka" class="form-control" required value="@k.Lozinka" />
+        <label>Pol:</label>
+        <select name="pol" class="form-control" required>
+            <option>MUSKI</option>
+            <option @(k.Pol == Zadatak.Models.Pol.ZENSKI ? "selected" : "")>ZENSKI</option>
+        </select>
+        <label>Datum rodjenja:</label>
+        <input type="date" name="datumRodjenja" min="1900-01-01" class="form-control" required value="@k.DatumRodjenja.ToString("yyyy-MM-dd")" />
+        <br />
+        <input type="submit" value="Izmijeni podatke" name="submit" class="btn btn-default" />
+    </div>
+</form>

@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "RegistracijaTrenera";
+}
+
+<h2>Registracija Trenera</h2>
+<br />
+<table style="float: right;">
+    <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Korisnicko ime</th>
+        <th>Blokiraj</th>
+    </tr>
+    @foreach (var t in ViewBag.Treneri)
+    {
+        <tr>
+            <td>@t.Ime</td>
+            <td>@t.Prezime</td>
+            <td>@t.KorisnickoIme</td>
+            <td>
+                <form action="~/Vlasnik/Blokiraj" method="post">
+                    <input name="id" hidden value="@t.Id" />
+                    <input type="submit" value="Blokiraj" class="btn btn-default" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+<form accept-charset="utf-8" action="~/Vlasnik/Registrovanje" method="post">
+    <input name="ime" class="form-control" required placeholder="Ime" />
+    <br />
+    <input name="prezime" class="form-control" required placeholder="Prezime" />
+    <br />
+    <input type="date" class="form-control" required name="datumRodjenja" pattern="\d{2}-\d{2}-\{4}" />
+    <br />
+    <select name="pol" class="form-control" required>
+        <option value="">Izaberite opciju</option>
+        <option>MUSKI</option>
+        <option>ZENSKI</option>
+    </select>
+    <br />
+    <input name="korisnickoIme" class="form-control" required placeholder="Korisnicko ime" />
+    <br />
+    <input type="password" name="lozinka" class="form-control" required placeholder="Lozinka" />
+    <br />
+    <input name="email" type="email" class="form-control" required placeholder="Email" />
+    <br />
+    <select name="centarId" class="form-control">
+        @foreach (var c in ViewBag.Centri)
+        {
+            <option value="@c.Id">@c.Naziv</option>
+        }
+    </select>
+    <br />
+    <input type="submit" value="Registrujte trenera" class="btn btn-default" />
+</form>

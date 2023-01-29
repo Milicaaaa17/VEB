@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfFitnesCentar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FitnesCentar>
+    <Id>0</Id>
+    <Naziv>TopGym</Naziv>
+    <Adresa>
+      <Ulica>Fruskogorska</Ulica>
+      <Broj>5</Broj>
+      <Mesto>Novi Sad</Mesto>
+      <PostanskiBroj>21000</PostanskiBroj>
+    </Adresa>
+    <GodinaOsnivanja>2012</GodinaOsnivanja>
+    <VlasnikId>0</VlasnikId>
+    <MjesecnaClanarina>12</MjesecnaClanarina>
+    <GodisnjaClanarina>12</GodisnjaClanarina>
+    <CijenaJednogTreninga>12</CijenaJednogTreninga>
+    <CijenaGrupnogTreninga>12</CijenaGrupnogTreninga>
+    <CijenaTreningaSaPersTrenerom>12</CijenaTreningaSaPersTrenerom>
+    <Obrisan>false</Obrisan>
+  </FitnesCentar>
+  <FitnesCentar>
+    <Id>1</Id>
+    <Naziv>FitnessZone</Naziv>
+    <Adresa>
+      <Ulica>Sutjeska</Ulica>
+      <Broj>3</Broj>
+      <Mesto>Novi Sad</Mesto>
+      <PostanskiBroj>21000</PostanskiBroj>
+    </Adresa>
+    <GodinaOsnivanja>2015</GodinaOsnivanja>
+    <VlasnikId>0</VlasnikId>
+    <MjesecnaClanarina>12</MjesecnaClanarina>
+    <GodisnjaClanarina>12</GodisnjaClanarina>
+    <CijenaJednogTreninga>12</CijenaJednogTreninga>
+    <CijenaGrupnogTreninga>12</CijenaGrupnogTreninga>
+    <CijenaTreningaSaPersTrenerom>12</CijenaTreningaSaPersTrenerom>
+    <Obrisan>false</Obrisan>
+  </FitnesCentar>
+  <FitnesCentar>
+    <Id>2</Id>
+    <Naziv>Flex</Naziv>
+    <Adresa>
+      <Ulica>Suteska </Ulica>
+      <Broj>2</Broj>
+      <Mesto>Novi Sad</Mesto>
+      <PostanskiBroj>21000</PostanskiBroj>
+    </Adresa>
+    <GodinaOsnivanja>2011</GodinaOsnivanja>
+    <VlasnikId>0</VlasnikId>
+    <MjesecnaClanarina>2000</MjesecnaClanarina>
+    <GodisnjaClanarina>12000</GodisnjaClanarina>
+    <CijenaJednogTreninga>200</CijenaJednogTreninga>
+    <CijenaGrupnogTreninga>1000</CijenaGrupnogTreninga>
+    <CijenaTreningaSaPersTrenerom>3000</CijenaTreningaSaPersTrenerom>
+    <Obrisan>false</Obrisan>
+  </FitnesCentar>
+</ArrayOfFitnesCentar>

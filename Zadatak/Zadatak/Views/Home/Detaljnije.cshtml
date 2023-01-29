@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Detaljnije";
+    var f = ViewBag.Centar;
+}
+
+<h2>Detaljnije</h2>
+<table>
+    <tr>
+        <td>Naziv</td>
+        <td>@f.Naziv</td>
+    </tr>
+    <tr>
+        <td>Vlasnik</td>
+        <td>@ViewBag.Vlasnik.Ime @ViewBag.Vlasnik.Prezime</td>
+    </tr>
+    <tr>
+        <td>Adresa</td>
+        <td>@f.Adresa.ToString()</td>
+    </tr>
+    <tr>
+        <td>Godina osnivanja</td>
+        <td>@f.GodinaOsnivanja</td>
+    </tr>
+    <tr>
+        <td>Cijena mjesecne clanarine</td>
+        <td>@f.MjesecnaClanarina</td>
+    </tr>
+    <tr>
+        <td>Cijena godisnje clanarine</td>
+        <td>@f.GodisnjaClanarina</td>
+    </tr>
+    <tr>
+        <td>Cijena jednog treninga</td>
+        <td>@f.CijenaJednogTreninga</td>
+    </tr>
+    <tr>
+        <td>Cijena grupnog treninga</td>
+        <td>@f.CijenaGrupnogTreninga</td>
+    </tr>
+    <tr>
+        <td>Cijena treninga sa trenerom</td>
+        <td>@f.CijenaTreningaSaPersTrenerom</td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Tip</th>
+        <th>Vrijeme</th>
+        <th>Termin</th>
+        <th>Maksimalno posjetilaca</th>
+        <th>Broj prijavljenih</th>
+        <th @(ViewBag.PrijavljenID == -1 ? "hidden" : "")>Prijava</th>
+    </tr>
+
+    @foreach (var t in ViewBag.Treninzi)
+    {
+        <tr>
+            <td>@t.Naziv</td>
+            <td>@t.Tip</td>
+            <td>@t.Vrijeme</td>
+            <td>@t.Termin.ToString("dd/MM/yyyy HH:mm")</td>
+            <td>@t.MaxBrojPosjetilaca</td>
+            <td>@t.SpisakPosjetilacaId.Count</td>
+            <td @(ViewBag.PrijavljenID == -1 ? "hidden" : "")>
+                <form action="~/Posjetilac/Prijava" method="post" @((t.SpisakPosjetilacaId.Contains(ViewBag.PrijavljenID) && t.SpisakPosjetilacaId.Count < t.MaxBrojPosjetilaca) ? "hidden" : "")>
+                    <input hidden name="posID" value="@ViewBag.PrijavljenID" />
+                    <input hidden name="trID" value="@t.Id" />
+                    <input hidden name="fID" value="@f.Id" />
+                    <input type="submit" value="Prijavi se" class="btn btn-default" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+
+<table>
+    <tr>
+        <th>Posjetilac</th>
+        <th>Komentar</th>
+        <th>Ocijena</th>
+    </tr>
+    @foreach (var k in ViewBag.Komentari)
+    {
+        <tr>
+            <td>@k.Posjetilac</td>
+            <td>@k.Tekst</td>
+            <td>@k.Ocijena</td>
+        </tr>
+    }
+</table>

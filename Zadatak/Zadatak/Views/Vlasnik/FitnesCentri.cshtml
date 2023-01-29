@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Fitnes Centri";
+}
+
+<h2>Fitnes Centri</h2>
+<br />
+<form accept-charset="utf-8" action="~/Vlasnik/KreirajCentar" method="post">
+    <input name="naziv" required placeholder="Naziv" class="form-control" />
+    <br />
+    <input name="ulica" required placeholder="Ulica" class="form-control" />
+    <br />
+    <input name="broj" required placeholder="Broj" class="form-control" />
+    <br />
+    <input name="mesto" required placeholder="Mesto" class="form-control" />
+    <br />
+    <input name="postanskiBroj" type="number" min="0" required placeholder="Postanski broj" class="form-control" />
+    <br />
+    <input name="GodinaOsnivanja" type="number" min="0" required placeholder="Godina Osnivanja" class="form-control" />
+    <br />
+    <input name="MjesecnaClanarina" type="number" min="0" required placeholder="Mjesecna Clanarina" class="form-control" />
+    <br />
+    <input name="GodisnjaClanarina" type="number" min="0" required placeholder="Godisnja Clanarina" class="form-control" />
+    <br />
+    <input name="CijenaJednogTreninga" type="number" min="0" required placeholder="Cijena Jednog Treninga" class="form-control" />
+    <br />
+    <input name="CijenaGrupnogTreninga" type="number" min="0" required placeholder="Cijena Grupnog Treninga" class="form-control" />
+    <br />
+    <input name="CijenaTreningaSaPersTrenerom" type="number" min="0" required placeholder="Cijena Treninga Sa Pers Trenerom" class="form-control" />
+    <br />
+    <input type="submit" value="Dodaj centar" class="btn btn-default" />
+</form>
+<br />
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Adresa</th>
+        <th>Godina osnivanja</th>
+        <th>Cijena mjesecne clanarine</th>
+        <th>Cijena godisnje clanarine</th>
+        <th>Cijena jednog treninga</th>
+        <th>Cijena grupnog treninga</th>
+        <th>Cijena treninga sa trenerom</th>
+        <th>Brisanje</th>
+        <th>Izmena</th>
+    </tr>
+    @foreach (var f in ViewBag.Centri)
+    {
+        <tr>
+            <td>@f.Naziv</td>
+            <td>@f.Adresa.ToString()</td>
+            <td>@f.GodinaOsnivanja</td>
+            <td>@f.MjesecnaClanarina</td>
+            <td>@f.GodisnjaClanarina</td>
+            <td>@f.CijenaJednogTreninga</td>
+            <td>@f.CijenaGrupnogTreninga</td>
+            <td>@f.CijenaTreningaSaPersTrenerom</td>
+            <td>
+                <form action="~/Vlasnik/ObrisiCentar" method="post">
+                    <input hidden name="id" value="@f.Id" />
+                    <input type="submit" value="Obrisi" class="btn btn-default" />
+                </form>
+            </td>
+            <td>
+                <form action="~/Vlasnik/Izmijeni" method="get">
+                    <input hidden name="id" value="@f.Id" />
+                    <input type="submit" value="Izmijeni" class="btn btn-default" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>

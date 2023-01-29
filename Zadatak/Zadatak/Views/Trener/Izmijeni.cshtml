@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Izmijeni";
+    var t = ViewBag.Trening;
+}
+
+<h2>Izmijeni</h2>
+
+
+<form action="~/Trener/IzmijeniTrening" method="post">
+    <input name="naziv" placeholder="Naziv" class="form-control" required value="@t.Naziv" />
+    <br />
+    <select name="tip" class="form-control" required>
+        <option>JOGA</option>
+        <option @(t.Tip == Zadatak.Models.TipTreninga.LESSMILLSTONE ? "selected" : "")>LESSMILLSTONE</option>
+        <option @(t.Tip == Zadatak.Models.TipTreninga.BODYPUMP ? "selected" : "")>BODYPUMP</option>
+    </select>
+    <br />
+    <input name="vrijeme" type="number" min="10" max="180" placeholder="Vrijeme" class="form-control" required value="@t.Vrijeme" />
+    <br />
+    <input name="termin" type="datetime-local" class="form-control" required value="@t.Termin.ToString("yyyy-MM-dd HH:mm")" />
+    <br />
+    <input name="maxBrojPosjetilaca" type="number" min="1" max="50" placeholder="Maksimalno posjetilaca" class="form-control" required value="@t.MaxBrojPosjetilaca" />
+    <br />
+    <input type="submit" value="Izmijeni trening" class="btn btn-default" />
+</form>

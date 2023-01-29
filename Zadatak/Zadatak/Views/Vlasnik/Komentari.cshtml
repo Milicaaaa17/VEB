@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Komentari";
+}
+
+<h2>Komentari</h2>
+<table>
+    <tr>
+        <th>Posjetilac</th>
+        <th>Tekst</th>
+        <th>Ocijena</th>
+        <th></th>
+    </tr>
+    @foreach (var k in ViewBag.KomCeka)
+    {
+        <tr>
+            <td>@k.Posjetilac</td>
+            <td>@k.Tekst</td>
+            <td>@k.Ocijena</td>
+            <td>
+                <a href="~/Vlasnik/StanjeKomentara?id=@k.Id&s=0" class="btn btn-default">Potvrdi</a>
+                <a href="~/Vlasnik/StanjeKomentara?id=@k.Id&s=1" class="btn btn-default">Odbij</a>
+            </td>
+        </tr>
+    }
+</table>

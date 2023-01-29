@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGrupniTrening xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GrupniTrening>
+    <SpisakPosjetilacaId>
+      <int>3</int>
+    </SpisakPosjetilacaId>
+    <Id>0</Id>
+    <Naziv>tr9</Naziv>
+    <Tip>BODYPUMP</Tip>
+    <CentarId>1</CentarId>
+    <Vrijeme>100</Vrijeme>
+    <Termin>2022-12-12T15:00:00</Termin>
+    <MaxBrojPosjetilaca>5</MaxBrojPosjetilaca>
+    <Obrisan>false</Obrisan>
+  </GrupniTrening>
+  <GrupniTrening>
+    <SpisakPosjetilacaId>
+      <int>4</int>
+    </SpisakPosjetilacaId>
+    <Id>1</Id>
+    <Naziv>tr1</Naziv>
+    <Tip>JOGA</Tip>
+    <CentarId>1</CentarId>
+    <Vrijeme>50</Vrijeme>
+    <Termin>2022-12-13T15:00:00</Termin>
+    <MaxBrojPosjetilaca>5</MaxBrojPosjetilaca>
+    <Obrisan>false</Obrisan>
+  </GrupniTrening>
+  <GrupniTrening>
+    <SpisakPosjetilacaId />
+    <Id>2</Id>
+    <Naziv>tr2</Naziv>
+    <Tip>BODYPUMP</Tip>
+    <CentarId>1</CentarId>
+    <Vrijeme>90</Vrijeme>
+    <Termin>2021-12-12T15:00:00</Termin>
+    <MaxBrojPosjetilaca>5</MaxBrojPosjetilaca>
+    <Obrisan>false</Obrisan>
+  </GrupniTrening>
+  <GrupniTrening>
+    <SpisakPosjetilacaId />
+    <Id>3</Id>
+    <Naziv>tr3</Naziv>
+    <Tip>JOGA</Tip>
+    <CentarId>1</CentarId>
+    <Vrijeme>50</Vrijeme>
+    <Termin>2021-12-13T15:00:00</Termin>
+    <MaxBrojPosjetilaca>5</MaxBrojPosjetilaca>
+    <Obrisan>false</Obrisan>
+  </GrupniTrening>
+  <GrupniTrening>
+    <SpisakPosjetilacaId />
+    <Id>4</Id>
+    <Naziv>tr9</Naziv>
+    <Tip>JOGA</Tip>
+    <CentarId>1</CentarId>
+    <Vrijeme>80</Vrijeme>
+    <Termin>2022-09-15T22:20:00</Termin>
+    <MaxBrojPosjetilaca>5</MaxBrojPosjetilaca>
+    <Obrisan>true</Obrisan>
+  </GrupniTrening>
+  <GrupniTrening>
+    <SpisakPosjetilacaId />
+    <Id>5</Id>
+    <Naziv>aaa</Naziv>
+    <Tip>JOGA</Tip>
+    <CentarId>1</CentarId>
+    <Vrijeme>90</Vrijeme>
+    <Termin>2022-10-04T08:42:00</Termin>
+    <MaxBrojPosjetilaca>8</MaxBrojPosjetilaca>
+    <Obrisan>true</Obrisan>
+  </GrupniTrening>
+</ArrayOfGrupniTrening>

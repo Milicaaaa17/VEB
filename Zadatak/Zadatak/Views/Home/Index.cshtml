@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Pocetna";
+}
+
+<h2>Fitnes centri</h2>
+
+<table style="float:right; margin-right:20px;">
+    <tr>
+        <th>Naziv</th>
+        <th>Adresa</th>
+        <th>Godina osnivanja</th>
+        <th></th>
+    </tr>
+
+    @foreach (var c in ViewBag.FitnesCentri)
+    {
+        <tr>
+            <td>@c.Naziv</td>
+            <td>@c.Adresa.ToString()</td>
+            <td>@c.GodinaOsnivanja</td>
+            <td>
+                <form accept-charset="utf-8" method="get" action="~/Home/Detaljnije">
+                    <input type="number" hidden value="@c.Id" name="id" />
+                    <input type="submit" value="Detaljnije" class="btn btn-default" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+<form accept-charset="utf-8" method="get" action="~/Home/Pretrazi">
+    <label>Naziv:</label>
+    <input name="naziv" class="form-control" />
+    <br />
+    <label>Adresa:</label>
+    <input name="adresa" class="form-control" />
+    <br />
+    <label>Minimalna godina:</label>
+    <input name="min" type="number" min="0" max="2050" class="form-control" />
+    <br />
+    <label>Maksimalna godina:</label>
+    <input name="max" type="number" min="0" max="2050" class="form-control" />
+    <br />
+    <input type="submit" value="Pretrazi" class="btn btn-default" />
+</form>
+<br />
+<form accept-charset="utf-8" method="get" action="~/Home/Sortiraj">
+    <select name="parametar" style="border-radius: 3px;">
+        <option>NAZIV</option>
+        <option>ADRESA</option>
+        <option>GODINA</option>
+    </select>
+    <select name="metod" style="border-radius: 3px;">
+        <option>RASTUCE</option>
+        <option>OPADAJUCE</option>
+    </select>
+    <input type="submit" value="Sortiraj" class="btn btn-default" />
+</form>
+

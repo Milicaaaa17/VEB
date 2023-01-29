@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKorisnik xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Korisnik>
+    <Id>0</Id>
+    <KorisnickoIme>milica</KorisnickoIme>
+    <Lozinka>milica</Lozinka>
+    <Ime>Milica</Ime>
+    <Prezime>Popovic</Prezime>
+    <Pol>ZENSKI</Pol>
+    <Email>milica@milica.com</Email>
+    <DatumRodjenja>2000-03-17T00:00:00</DatumRodjenja>
+    <Uloga>VLASNIK</Uloga>
+    <GrupniTreninzi />
+    <CentarId>-1</CentarId>
+    <CentriId>
+      <int>0</int>
+      <int>1</int>
+    </CentriId>
+    <Obrisan>false</Obrisan>
+  </Korisnik>
+  <Korisnik>
+    <Id>1</Id>
+    <KorisnickoIme>milan</KorisnickoIme>
+    <Lozinka>milan</Lozinka>
+    <Ime>Milan</Ime>
+    <Prezime>Lukic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>milanl@gmail.com</Email>
+    <DatumRodjenja>2001-12-15T00:00:00</DatumRodjenja>
+    <Uloga>POSJETILAC</Uloga>
+    <GrupniTreninzi>
+      <int>0</int>
+      <int>1</int>
+      <int>2</int>
+      <int>3</int>
+    </GrupniTreninzi>
+    <CentarId>-1</CentarId>
+    <CentriId />
+    <Obrisan>false</Obrisan>
+  </Korisnik>
+  <Korisnik>
+    <Id>2</Id>
+    <KorisnickoIme>jana</KorisnickoIme>
+    <Lozinka>jana</Lozinka>
+    <Ime>Jana</Ime>
+    <Prezime>Radovanovic</Prezime>
+    <Pol>ZENSKI</Pol>
+    <Email>jana</Email>
+    <DatumRodjenja>2001-12-15T00:00:00</DatumRodjenja>
+    <Uloga>TRENER</Uloga>
+    <GrupniTreninzi>
+      <int>0</int>
+      <int>1</int>
+      <int>2</int>
+      <int>3</int>
+    </GrupniTreninzi>
+    <CentarId>1</CentarId>
+    <CentriId />
+    <Obrisan>false</Obrisan>
+  </Korisnik>
+  <Korisnik>
+    <Id>3</Id>
+    <KorisnickoIme>marko</KorisnickoIme>
+    <Lozinka>marko</Lozinka>
+    <Ime>marko</Ime>
+    <Prezime>Markovic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>marko@marko</Email>
+    <DatumRodjenja>1998-11-17T00:00:00</DatumRodjenja>
+    <Uloga>POSJETILAC</Uloga>
+    <GrupniTreninzi>
+      <int>0</int>
+    </GrupniTreninzi>
+    <CentarId>-1</CentarId>
+    <CentriId />
+    <Obrisan>false</Obrisan>
+  </Korisnik>
+  <Korisnik>
+    <Id>4</Id>
+    <KorisnickoIme>jelena</KorisnickoIme>
+    <Lozinka>jelena</Lozinka>
+    <Ime>Jelena</Ime>
+    <Prezime>Radovanovic</Prezime>
+    <Pol>ZENSKI</Pol>
+    <Email>sdad@dasdas17</Email>
+    <DatumRodjenja>2022-09-14T00:00:00</DatumRodjenja>
+    <Uloga>POSJETILAC</Uloga>
+    <GrupniTreninzi>
+      <int>1</int>
+    </GrupniTreninzi>
+    <CentarId>-1</CentarId>
+    <CentriId />
+    <Obrisan>false</Obrisan>
+  </Korisnik>
+  <Korisnik>
+    <Id>5</Id>
+    <KorisnickoIme>jovan</KorisnickoIme>
+    <Lozinka>jovan</Lozinka>
+    <Ime>Jovan</Ime>
+    <Prezime>Jovanovic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>jovan@jov</Email>
+    <DatumRodjenja>2022-08-31T00:00:00</DatumRodjenja>
+    <Uloga>TRENER</Uloga>
+    <GrupniTreninzi />
+    <CentarId>1</CentarId>
+    <CentriId />
+    <Obrisan>false</Obrisan>
+  </Korisnik>
+</ArrayOfKorisnik>

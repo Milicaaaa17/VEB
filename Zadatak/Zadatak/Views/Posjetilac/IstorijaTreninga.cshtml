@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Istorija treninga";
+    var tr = ViewBag.Treninzi;
+    var c = ViewBag.Centri;
+}
+
+<h2>Istorija treninga</h2>
+<table style="float:right; margin-right:20px;">
+    <tr>
+        <th>Naziv</th>
+        <th>Tip treninga</th>
+        <th>Naziv fitnes centra</th>
+        <th>Datum i vreme</th>
+        <th>Trajanje</th>
+        <th>Komentar</th>
+    </tr>
+
+    @for (int i = 0; i < tr.Count; i++)
+    {
+        <tr>
+            <td>@tr[i].Naziv</td>
+            <td>@tr[i].Tip</td>
+            <td>@c[i]</td>
+            <td>@tr[i].Termin.ToString("dd/MM/yyyy HH:mm")</td>
+            <td>@tr[i].Vrijeme</td>
+            <td>
+                <form action="~/Posjetilac/OstaviKomentar" method="get">
+                    <input hidden name="id" value="@tr[i].CentarId" />
+                    <input type="submit" value="Ostavi komentar" class="btn btn-default" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+
+<form action="~/Posjetilac/Pretrazi" method="get">
+    <label>Naziv:</label>
+    <input name="naziv" class="form-control" />
+    <label>Tip treninga:</label>
+    <select name="tip" class="form-control">
+        <option></option>
+        <option>JOGA</option>
+        <option>LESMILLSTONE</option>
+        <option>BODYPUMP</option>
+    </select>
+    <label>Naziv centra:</label>
+    <input name="nazivCentra" class="form-control" />
+    <br />
+    <input type="submit" value="Pretrazi" class="btn btn-default" />
+</form>
+
+<br />
+<form action="~/Posjetilac/Sortiraj" method="get">
+    <label>Sortiraj:</label>
+    <select name="parametar" class="form-control">
+        <option value="NAZIV">Naziv</option>
+        <option value="TIP">Tip treninga</option>
+        <option value="DATUM">Datum i vreme</option>
+    </select>
+    <select name="metod" class="form-control">
+        <option>Rastuce</option>
+        <option>Opadajuce</option>
+    </select>
+    <input type="submit" value="Sortiraj" class="btn btn-default" />
+</form>

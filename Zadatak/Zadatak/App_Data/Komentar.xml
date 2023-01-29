@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKomentar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Komentar>
+    <Id>5</Id>
+    <Posjetilac>milan</Posjetilac>
+    <FitCentarId>1</FitCentarId>
+    <Tekst>Povoljne cijene,svidja mi se</Tekst>
+    <Ocijena>5</Ocijena>
+    <Stanje>POTVRDJEN</Stanje>
+    <Obrisan>false</Obrisan>
+  </Komentar>
+  <Komentar>
+    <Id>1</Id>
+    <Posjetilac>milan</Posjetilac>
+    <FitCentarId>1</FitCentarId>
+    <Tekst>Uzas trener</Tekst>
+    <Ocijena>1</Ocijena>
+    <Stanje>POTVRDJEN</Stanje>
+    <Obrisan>false</Obrisan>
+  </Komentar>
+</ArrayOfKomentar>
